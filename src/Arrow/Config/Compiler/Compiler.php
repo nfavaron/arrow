@@ -30,6 +30,7 @@ class Compiler
      */
     public function addStrategy(CompilerStrategyInterface $strategy)
     {
+
         $this->strategy[] = $strategy;
 
         return $this;
@@ -98,7 +99,7 @@ class Compiler
         }
 
         // Output file not writable
-        if (is_writable($configPath) === false) {
+        if (file_exists($configPath) && is_writable($configPath) === false) {
             throw new CompilerException(sprintf(
                 'The file path "%s" is not writable.',
                 $configPath
@@ -108,13 +109,14 @@ class Compiler
         // Export variable
         $applicationConfig = var_export($applicationConfig, true);
 
-        // Prevent messing up with namespace
-
         // Store Configuration
         file_put_contents(
             $configPath,
             sprintf("<?php\nreturn %s;\n", $applicationConfig)
         );
+
+        // Chmod
+        @chmod($configPath, 0755);
 
         return $this;
 

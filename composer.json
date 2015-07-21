@@ -9,7 +9,7 @@
     ],
     "homepage": "https://github.com/nfavaron/arrow",
     "autoload": {
-        "psr-0": {
+        "psr-4": {
             "Arrow\\": "src/"
         }
     },

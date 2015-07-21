@@ -18,7 +18,7 @@ class Event implements EventInterface
     protected $name;
 
     /**
-     * Allow (true) or not (false) for the event to continue its
+     * Allow (true) or prevent (false) the event to continue its
      * propagation across the remaining observers.
      *
      * @var bool
@@ -60,7 +60,7 @@ class Event implements EventInterface
      */
     public function getPropagation() {
 
-        return $this;
+        return $this->propagation;
     }
 
 }

@@ -1,0 +1,14 @@
+{
+    "name": "Arrow Framework",
+    "description": "Events driven PHP framework, focusing on simplicity and performance, giving full control to the developer for customization.",
+    "type": "library",
+    "license": "MIT",
+    "keywords": [
+        "arrow",
+        "framework"
+    ],
+    "homepage": "https://github.com/nfavaron/arrow",
+    "require": {
+        "php": ">=5.4.0"
+    }
+}

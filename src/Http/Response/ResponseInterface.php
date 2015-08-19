@@ -28,16 +28,16 @@ interface ResponseInterface
     public function getStatusCode();
 
     /**
-     * Adds a header to the response
+     * Sets the response's header $name & $value
      *
      * @param string $name
      * @param string $value
      * @return $this
      */
-    public function addHeader($name, $value);
+    public function setHeader($name, $value);
 
     /**
-     * Removes a header from the response
+     * Removes the response's header $name
      *
      * @param string $name
      * @return $this
@@ -45,7 +45,7 @@ interface ResponseInterface
     public function removeHeader($name);
 
     /**
-     * Sets the content of the response
+     * Sets the response's content
      *
      * @param ResponseContentInterface $content
      * @return $this
@@ -53,7 +53,7 @@ interface ResponseInterface
     public function setContent(ResponseContentInterface $content);
 
     /**
-     * Gets the content of the response.
+     * Gets the response's content
      * Returns null if the content is not defined.
      *
      * @return ResponseContentInterface|null

@@ -123,7 +123,7 @@ class Response implements ResponseInterface
     /**
      * @inheritdoc
      */
-    public function addHeader($name, $value)
+    public function setHeader($name, $value)
     {
 
         $this->headers[$name] = $value;
